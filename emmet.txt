@@ -1,0 +1,15 @@
+!: the statring html boilerplate
+link: addes the link with stylesheet 
+div.myclass or div.myclass#myid
+without a div it produces a div 
+div.myclass = .myclass
+//put text inside the elements  
+.container>.row>.col3{hello$}*3
+.parent>.child${this is child $}*3
+
+//numbering with zero padding 
+.parent>.child${this is child $$}*3
+//you can create siblings with + 
+header.hello+(body.mybody#mainbody>.container>.row>.col3{col $$ content}*4)+footer.myfooter
+//you can use ^ to climb up the former can be achieved by 
+header.hello+body.mybody#mainbody>.container>.row>.col3{col $$ content}*4^footer.myfooter

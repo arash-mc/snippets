@@ -1,0 +1,4 @@
+connect to ssh without password: 
+first run this to make a public key
+then copy the contents of the .pub file into the remote host ~/.ssh/autorized_keys
+ssh-keygen -t ecdsa -b 521

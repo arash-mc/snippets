@@ -1,0 +1,100 @@
+USE sql_store;
+SELECT last_name,
+		first_name, 
+        points, 
+        points + 100 AS "discount points"
+FROM customers
+ORDER BY last_name; -- DESC sort descending
+
+USE sql_store; 
+SELECT * FROM customers
+order by state DESC, first_name; --sort by state descending then first name ascending
+
+USE sql_store; 
+SELECT *, quantity*unit_price AS total_price FROM 	order_items 
+WHERE order_id = 2 
+ORDER BY total_price DESC;
+
+
+##select distinct values
+SELECT DISTINCT state 
+FROM customers;
+
+boolean operators, 
+
+
+USE sql_store;
+SELECT * FROM customers 
+WHERE last_name LIKE '_____y'
+;
+
+
+REGEXP
+--^ beginning 
+-- $ end 
+-- | logical or 
+-- [abcd] 
+-- [a-e]  
+
+REGEXP '[a-h]e' finds strings where a thrgough h come before e 
+
+
+
+## check the customers whose phone number is not null 
+USE sql_store;
+SELECT * FROM customers 
+WHERE phone IS NOT NULL;
+
+
+--limit
+USE sql_store; 
+SELECT * FROM customers 
+LIMIT  6, 3;
+
+
+
+-- Inner join.
+USE sql_store; 
+SELECT order_id, first_name, last_name, customers.customer_id FROM customers 
+JOIN orders ON orders.customer_id = customers.customer_id;
+
+-- Join tables from other databases
+USE sql_store; 
+SELECT order_id, o.product_id, name, quantity_in_stock FROM order_items o
+JOIN sql_inventory.products p ON o.product_id = p.product_id;
+
+-- Join a table with itself 
+USE sql_hr;
+SELECT e.first_name, e.last_name, m.first_name AS manager FROM employees e
+JOIN employees m ON e.reports_to = m.employee_id;
+
+-- Join two tables
+USE sql_store;
+SELECT c.first_name, c.last_name, os.name AS order_status FROM orders o
+JOIN customers c ON o.customer_id = c.customer_id
+JOIN order_statuses os ON o.status= os.order_status_id;
+
+-- Join multiple tables 
+
+USE sql_invoicing; 
+SELECT c.name AS client_name,
+		pm.name AS payment_method,
+        p.date AS transaction_date
+		FROM payments p 
+JOIN clients c ON p.client_id = c.client_id
+JOIN payment_methods pm ON p.payment_method = pm.payment_method_id
+
+-- Outer joins Always use LEFT JOIN
+
+USE sql_store;
+SELECT c.first_name, order_date FROM customers c
+LEFT JOIN orders o
+ON o.customer_id = c.customer_id
+;
+ 
+
+
+
+
+ 
+

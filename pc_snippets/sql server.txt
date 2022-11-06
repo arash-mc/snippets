@@ -1,0 +1,8 @@
+run from command line
+sqlcmd -S DESKTOP-DJSH1H2 -E
+
+# how to see the columns in the table
+USE SQLbook
+SELECT *
+  FROM sys.columns 
+  WHERE object_id = OBJECT_ID('dbo.zipcensus');

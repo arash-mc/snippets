@@ -1,0 +1,9 @@
+to start a package: 
+npm init
+
+Then we install dependencies to the package. we then run 
+npm install bootstrap
+
+to build a project:
+npm run build
+

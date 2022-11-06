@@ -1,0 +1,16 @@
+to manually add vscode to path: 
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+#formatter shortcut 
+shift + option + f
+#Toggle case sensitivity 
+option + command + C
+#change all higlighted occurrances 
+shift + control + L
+#move one word 
+option + right or left arrow 
+#move the line up or down 
+option + up and down arrows 
+#hide-show the side bar 
+command + B
+

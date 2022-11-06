@@ -1,0 +1,8 @@
+//see the list of installed packages in the current folder
+npm list
+// add the installed package to the package.json file 
+npm install font-awesome --save
+//initialize the package 
+npm init -y
+//install a library 
+npm install --save-dev jest

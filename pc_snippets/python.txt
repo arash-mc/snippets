@@ -1,0 +1,62 @@
+ternary 
+x = 1 if condition else 0
+
+num = 10000000 or num = 10_000_000 are the same
+print(f'{total:,}') this prints 10,000,000
+
+#context manager 
+with open('test.txt' , 'r') as f:
+	file_contents = f.read()
+
+	
+#going through two lists concurrently 	
+for a,b in zip(a_list , b_list):
+	print(a , b)
+
+#tuple unpacking 
+a, b  = (1 , 2)
+a,_  = (1 , 2)
+a , b , *c = (1 , 2 , 3 , 4 , 5) #c is the rest
+a, b, *c, d = (1, 2, 3, 5, 5) 
+
+
+#dynamic attributaion setting and reading 
+class Person():
+    pass
+
+person = Person()
+first_key = 'first'
+first_val = 'Corey'
+setattr(person, first_key, first_val)
+print(person.first)
+first_name = getattr(person, first_key)
+print(first_name)
+
+#prints 
+# Corey
+# Corey
+
+
+#looping over dictionary 
+for key, value in dictionary.items():
+	blah blah
+
+# Getting pasword from command line 
+from getpass import getpass
+username = input('Username:')
+password = getpass('Password')
+
+#running a module that is on the sys.path
+python password.py
+
+or python -m password
+
+
+#getting help 
+help(np)
+
+#flatten a list 
+x = [[1,2,3],[4,5,6],[7,8,9]]
+[number+1 for group in x for number in group]
+[2, 3, 4, 5, 6, 7, 8, 9, 10]
+

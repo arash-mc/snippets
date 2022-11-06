@@ -1,0 +1,19 @@
+// adding the new environment to jupyter notebook 
+
+first go to the environment you are adding and then
+conda install -c anaconda ipykernel 
+python -m ipykernel install --user --name=cairo
+// craete environment with access to all system-wide packages/ I did this because cairo didn't work on my mac
+python3 -m venv --system-site-package path/to/env
+
+//Tk doesn't work with ipykernel version>4.10
+conda install ipykernel=4.10
+
+// see the list of jupyter notebook environments 
+jupyter kernelspec list
+
+//I had an error after installing the new environment the jupyter notebook failed with 
+// the error : win32api I ran the following command
+//installing it via python solved  the problem. 
+>pip install pywin32
+

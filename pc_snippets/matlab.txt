@@ -1,0 +1,2 @@
+If the eps is pixelated, you need to change the renderer from OpenGl to painters
+set(gcf, 'Renderer', 'Painters');

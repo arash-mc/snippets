@@ -1,0 +1,9 @@
+delete line: 
+ctrl + shift + k
+
+sidebar toggle: ctrl + b
+
+sidebar files: ctrl + shift + e 
+marketplace: ctrl + shift + x
+
+options: ctrl + shift + p

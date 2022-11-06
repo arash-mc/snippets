@@ -1,0 +1,2 @@
+//finding the files then copying them to the current folder with the changed name. pay attention to the p(print) command of the sed and -n2 command of the xargs and feeding them to the cp command. Nice!
+find  ~/phd/skyrmion_gates_project/simulator/gate_sets/version3|egrep icon.png|sed  "p;s/.*gates\/\(.*\)\/.*/\1.png/" | xargs -n2 cp

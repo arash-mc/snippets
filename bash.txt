@@ -1,0 +1,42 @@
+***************************************************
+//find and list the number of rows in each file
+$(find . |egrep 'mx3') |sort -nr|grep '.*\s(\..*)'
+//use grep for finding pattern in file 
+grep --exclude-dir=test  -r "NewSlice"  ./cuda/*
+find . | egrep '.go'| xargs -p  -I x grep package x
+//typical grep for searchign subdirs
+grep -r 'scalFn' *
+***************************************************
+//get current username:
+whoami (who am i)
+
+// list  files and folders by size
+du -h |sort -hr
+// replace spaces in string with underscore
+str="hello world"
+${str// /_}
+//add color to the output of the ls command in the .zprofile in your home folder
+alias ls='ls -G'
+alias ll='ls -lG'
+
+xargs -I X puts the result of a pipe as an option for the next unpiped command
+get the first lines: head -n 4. example ls -lt | head -n 4
+get the last lines : tail -n 4. example ls -lt | tail -n 4
+//for loop
+for ((i=2;i<10;i++));do;echo $i;done
+//array
+a=(1 5 8 10)
+// loop through array elements
+for t in $a[@]; do; echo $t; done;
+// Use xargs command for piping commands that don't pipe 
+ls -t | head -1 | xargs -I {} cp {} ~/phd/
+// - make 100 folders: 
+seq 100 | xargs -I X mkdir "arashX"
+// - change the file extensions for all the txt files 
+ls | cut -d. -f1 | xargs -I file_name mv file_name.txt file_name.text
+
+// loop throuth folders 
+for d in */ ; do
+    cd $d; pwd; cd ..;               
+done
+

@@ -1,0 +1,65 @@
+// create database 
+CREATE DATABASE db_name;
+// add user to database: 
+GRANT ALL PRIVILEGES ON projects. * TO 'django_user'@'localhost';
+// show the current database 
+SELECT database();
+//show current user 
+SELECT user();
+// show all users
+SELECT USER FROM mysql.user;
+// see the table schema 
+DESCRIBE users
+also 
+SHOW COLUMNS FROM users
+
+// add column to the table 
+ALTER TABLE users ADD COLUMN surename VARCHAR(256) AFTER name;
+//create table 
+CREATE TABLE occupations( ID INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,  occupation VARCHAR(512));
+// adding foreing key to existing table 
+ALTER TABLE users ADD COLUMN occupation_id INT;
+ALTER TABLE users ADD CONSTRAINT FOREIGN KEY (occupation_id) REFERENCES occupations (id);
+
+// show the commands to create table 
+SHOW CREATE TABLE occupations
+// drop a column in a table 
+ALTER TABLE DROP COLUMN occupation_id;
+//add a record to table 
+INSERT INTO users(name) VALUE ('arshin')
+
+//run a system command 
+system clear;
+//show the tables 
+SHOW TABLES;
+//show unique rows 
+SELECT DISTINCT(breed) FROM dogs;
+// the number of rows
+SELECT  count(*) FROM dogs;
+//select the top 10 results offseted by 5 i.e., lines 6 to 16 
+SELECT breed FROM dogs LIMIT 5, 10;
+// using where and logical operators
+SELECT dog_guid, weight
+FROM dogs
+WHERE weight BETWEEN 10 AND 50;
+// using where and logical operators
+SELECT dog_guid, weight
+FROM dogs
+WHERE weight BETWEEN 10 AND 50;
+
+//specify multiple strings for the where operator
+SELECT dog_guid, breed
+FROM dogs
+WHERE breed IN ("golden retriever","poodle");
+
+//compare date smaller or bigger than value 
+SELECT COUNT(*)
+FROM complete_tests
+WHERE created_at <'2015-10-15';
+
+//ordering by multiple columns
+
+SELECT DISTINCT  state, membership_type
+FROM users
+WHERE country="US"
+ORDER BY state DESC, membership_type ASC

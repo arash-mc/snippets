@@ -1,0 +1,98 @@
+1- login into postgres 
+psql --username=arash  dbname=postgres
+
+2-list databases 
+\l 
+
+3-create a database
+CREATE DATABASE database_name
+
+4-connect to database
+\c database_name
+
+5-display tables 
+\d 
+6- create table 
+create table table_name();
+
+7- display table
+\d table_name;
+
+8- add a column 
+alter table second_table add column first_column int;
+9-drop a column 
+alter table second_table drop column age;
+10- rename column
+alter table second_table rename column name to username;
+11- insert values into the table
+insert into second_table(id, username) values(1, 'Samus');
+12- delete row from column 
+delete from second_table where username='Sasmus';
+
+13- drop a table 
+drop table second_table;
+
+14- rename database
+ALTER DATABASE first_database RENAME TO mario_database;
+
+15- drop database
+DROP DATABASE second_database
+
+16- update a column in a row
+UPDATE characters SET favorite_color='Orange' WHERE name='Daisy';
+
+17- set a column as the primary key
+alter table characters add primary key(name);
+
+18- create a table with columns in the time of creation 
+CREATE TABLE sounds(sound_id SERIAL PRIMARY KEY);
+18- drop a constraint
+ ALTER TABLE characters DROP CONSTRAINT characters_pkey;
+19- add a foreign key 
+ALTER TABLE more_info ADD COLUMN character_id INT REFERENCES characters(character_id);
+20- add a unique constraint to a column 
+ALTER TABLE more_info ADD UNIQUE(character_id);
+21- set a column as not null 
+ALTER TABLE more_info ALTER COLUMN character_id SET NOT NULL;
+22- make existing column a foerign key 
+ALTER TABLE character_actions ADD FOREIGN KEY(character_id) REFERENCES characters(character_id);
+23- assign composite primary key 
+ALTER TABLE character_actions ADD PRIMARY KEY(character_id, action_id);
+24- Full join 
+mario_database=> SELECT * FROM characters FULL JOIN more_info ON characters.character_id=more_info.character_id;
+25- full join with a middle table 
+SELECT * FROM character_actions 
+FULL JOIN CHARACTERS ON characters.character_id = character_actions.character_id
+FULL JOIN ACTIONS ON character_actions.action_id = actions.action_id;
+
+26- dump a database into a file 
+pg_dump -cC --inserts -U freecodecamp universe > universe.sql
+27- read a file and make a database
+psql  database  < universe.sql
+
+28- run a single command from outside the database
+"psql -X --username=freecodecamp --dbname=students --no-align --tuples-only -c"
+29- delete all the data from a table 
+TRUNCATE majors, students, majors_courses;
+30- Pattern matching by LIKE and NOT LIKE, ILIKE ignores the case
+SELECT * FROM courses WHERE course NOT LIKE '% %'
+31- IS/IS NOT NULL condition checks if the column is/is not null 
+32- order the results 
+SELECT * FROM students ORDER BY gpa DESC/or ASC(default);
+33- limit the results 
+SELECT * FROM students ORDER BY gpa DESC, first_name LIMIT 10;
+34- showing the number of items in each group
+SELECT major_id, COUNT(*) FROM students GROUP BY major_id;
+35- having 
+SELECT Major_id, MIN(gpa), MAX(gpa) FROM students  GROUP BY major_id HAVING max(gpa)=4;
+36- Join example 
+SELECT major FROM majors LEFT JOIN students ON majors.major_id=students.major_id WHERE student_id IS NULL OR first_name ILIKE '%ma%' ORDER BY major;
+37 - join with using if the column names are the same
+SELECT * FROM students FULL JOIN majors USING(major_id);
+38- join with aliases 
+select s.major_id  from students as s full join majors as m  on s.major_id=m.major_id;
+39- join several tables 
+select * from students full join majors using(major_id) full join majors_courses using(major_id) full join courses using(course_id);
+40 - clear screen 
+control + l
+

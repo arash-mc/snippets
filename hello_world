@@ -1,0 +1,5 @@
+#! /bin/sh
+
+first_variable="$1"
+echo "hello world $first_variable"
+

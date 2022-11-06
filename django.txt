@@ -1,0 +1,31 @@
+//start a new project 
+django-admin startproject xxx
+// start an app in django
+python manage.py startapp polls
+
+//making the migration for an app 
+python manage.py makemigrations polls
+
+// showing the sql syntax of the migrations
+python manage.py sqlmigrate polls 0001
+
+// prepare the jupyter noetbook for running django
+import os, sys
+import django
+from django.conf import settings
+sys.path.insert(0, os.getenv('PWD'))
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'first_project.settings')
+os.environ.setdefault('DJANGO_ALLOW_ASYNC_UNSAFE', 'true')
+import django
+django.setup()
+
+// create a superuser
+python manage.py createsuperuser
+//test an app
+python manage.py test polls
+// prepare test envirnoment
+from django.test.utils import setup_test_environment
+setup_test_environment()
+// see the queries 
+from django.db import connection
+print(connection.queries)

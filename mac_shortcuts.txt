@@ -1,0 +1,10 @@
+Terminal open tab: command + t
+Terminal right/left tab: command + shift + ][
+Language change: option+control+space
+Menubar show: control+fn+f2
+chrome go back/forward: command+left/rigt arrows
+
+To see ssd usage: 
+cd /
+cd usr/local/sbin
+./smartctl -a /dev/disk0

@@ -1,0 +1,6 @@
+list the environments: 
+conda env list
+
+create environment using yaml file: 
+conda env create -f <path_to_yaml_file>
+conda activate <environment_name>

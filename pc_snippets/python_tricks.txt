@@ -1,0 +1,8 @@
+get the absolute path of module inside that module 
+module_path = os.path.abspath(os.path.dirname(__file__))
+
+to make a source distribution for a package: 
+python .\setup.py sdist
+
+to install a local package: 
+pip install -e package_folder

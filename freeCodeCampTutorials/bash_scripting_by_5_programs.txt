@@ -1,0 +1,61 @@
+1- see where a program is 
+which bash 
+
+2- put a shebang in the first line of the script to make it executable by the specified shell 
+#!/bin/zsh
+
+3-make the script executeable by giving permission 
+chmod +x questionnaire.sh
+
+4-enable backslash interpretation in echo by -e flag
+echo -e "\n"
+5- to get the arguments passed to script we use $
+echo $1 (prints the first argument)
+
+6- if structure
+
+if [[ $1 -le 5 ]]
+then
+  echo true
+else
+  echo false
+fi
+
+7- exit status of the latest command is $?
+echo $?
+
+8-print the environment variables 
+printenv
+9- show the created variables
+ declare -p
+10- random number generator variable 
+$RANDOM
+
+11- evaluating expressions
+(( I+=10 )) //we don't need to put $ before tha variable name
+12- using the value of the expression of paranthesis 
+$(( I+=10 ))
+13- setting another variable to the result of an expression 
+J=$(( I - 6 ))
+14- seeing the declaration of a variable 
+declare -p J
+15- define an array 
+ARR=("a" "b" "c")
+16- get array content 
+echo ${ARR[1]}
+17- print all contents of an array 
+echo ${ARR[*]}
+18- make a function 
+GET_FORTUNE() {
+        echo "Ask a yes or no question:" 
+        read QUESTION
+}
+
+19- check pattern matchihng with regular expressions  in expression 
+[[ "hello world"  =~ ^h ]]; echo $? 
+
+20- type command shows the type of command 
+type then
+
+21- output the error output to the file
+bad_command 2>stderr.txt

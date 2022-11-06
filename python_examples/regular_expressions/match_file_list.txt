@@ -1,0 +1,6 @@
+import re
+file_list = os.listdir('junctionur_1_1_snapshot.out')
+pattern = re.compile('.*jpg$')
+files = filter(pattern.match, file_list)
+for file in sorted(files): 
+  print(file)

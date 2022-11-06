@@ -1,0 +1,14 @@
+//paths
+go env GOROOT
+go env GOPATH
+// variables 
+you can redecleare a vriable that has been decleard in package scope in a function
+arrays are data types/ slices are reference types
+bar := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}//defines a slice 
+bar := [...]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}//defines an integer
+madeSlice := make([]int, 5, 100)//make a slice with length 5 and capacity 100 
+mergedSlice := append(s1, bar...)// merge two slices using the spread operator
+//initialize a module 
+go mod init arashmousavi.com/greetings
+
+

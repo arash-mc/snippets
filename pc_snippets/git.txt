@@ -1,0 +1,38 @@
+git config --global user.name arash
+git config --global user.email arashmoosavy@gmail.com
+git log 
+git log --oneline
+git revert 
+git checkout 
+git reset
+git checkout -b feature-a //make a branch and checkout
+ git branch -d feature-b
+// to delete .git folder where system doesn't allow it 
+fuser -kill -r .git
+rm -r .git
+
+
+//show branches 
+git branch 
+// see remote branches 
+git remote -v
+//make a branch 
+git switch -c branch-name
+//delete a remote branch 
+git push -d origin just-a-branch
+// unstage the staged changes 
+git restore --staged <file path>
+// add ssh key to the repo
+first generate key pain in your ~/.ssh folder and then copy the content of .pub file into the github 
+go to setting>deploy keys
+
+//git with two users: 
+1- generate the ssh key pair in your ssh folder for your second account 
+2- in the .ssh/config/config file add the host name with the user name such that: 
+#second github  account
+Host github.com-arimoo2
+    HostName github.com
+    User arimoo2
+    IdentityFile ~/.ssh/newarash2003
+3- from now on when you add the origin to your repo you need to sepcify the github host as what you have entered here i.e.,:
+git@github.com-arimoo2:arimoo2/skyrmion_app.git
